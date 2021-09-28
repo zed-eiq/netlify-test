@@ -241,7 +241,10 @@
 								position: relative;
 								bottom: auto;
 							}
-						}</style><script>// Bind to events
+						}</style>
+            <script src="netlify-identity-widget.js" type="text/javascript" />
+            <script src="netlify-identity.js" type="text/javascript" />
+            <script>// Bind to events
 						netlifyIdentity.on("init", user => console.log(user));
 						netlifyIdentity.on("login", user => console.log(user));
 						netlifyIdentity.on("logout", () => console.log("Logged out"));
