@@ -1,0 +1,20 @@
+**Please review this document**:
+
+Title of document here
+[preview](#link-to-preview)
+[github](#link-to-file-in-specific-github-commit)
+
+You can leave comments below! or in the **Files changed**
+tab where you can comment on specific lines in the .rst file.
+See info here on how to review a PR:
+
+- [GitHub docs on PR reviews](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/approving-a-pull-request-with-required-reviews)
+- [Intranet - How to review doc PRs, with video guide](https://intranet.eclecticiq.com/display/ENG/GitHub+review+process+for+integrations+documentation)
+
+
+### Example
+
+Title of document here
+[preview](#https://docs.eclecticiq.com/pintexp/eiq-pint-experimental/integrations/extensions/incoming-feeds/list-of-incoming-feeds/incoming-feed-vmray-malware-submission-feed
+)
+[github](#https://github.com/eclecticiq/docs-integrations-v2/blob/09f7789144be70c7d63f2d5ff26df23aff0c796c/source/extensions/incoming-feeds/list-of-incoming-feeds/incoming-vmray.rst)

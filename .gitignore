@@ -1,0 +1,13 @@
+.env
+.envrc
+**/build/
+**/_build/
+env/
+**/.DS_Store
+.direnv/
+.history/
+.idea/
+.vscode/
+scripts/_data/*.json
+sphinx2confluence.gitlab-ci.yml
+**/__pycache__

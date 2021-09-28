@@ -1,0 +1,38 @@
+---
+stages:
+  - build
+
+build:
+    stage: build
+    image:
+      name: "python:3.9-buster"
+      # python:3.9-alpine fails to build because for
+      # some reason 'sphinx-build -b html <src> <dest>'
+      # needs gcc
+    variables:
+      OUTPUT_FORMAT: "html"
+      SOURCEDIR: "$CI_PROJECT_DIR/source"
+      DESTDIR_BASE: "$CI_PROJECT_DIR/build/"
+      DESTDIR: "$DESTDIR_BASE/$OUTPUT_FORMAT"
+      # variables for publishing to confluence
+      # this should change per publish target.
+      # e.g. staging branch should publish only to staging space
+      # public/publish branch should publish only to production space
+      TARGET_SPACE: "SPHINXDOC"
+      TARGET_PARENT_PAGE: "eiq-sphinx-doc"
+      TARGET_PARENT_PAGE_ID: "54283365"
+      CONFLUENCE_SERVER_URL: "https://docs.eclecticiq.com/"
+    before_script:
+      - python3 -m pip install -r "$CI_PROJECT_DIR/requirements.txt"
+    script:
+      - sphinx-build -b $OUTPUT_FORMAT $SOURCEDIR $DESTDIR
+      # build for confluence as well
+      - sphinx-build -b confluence $SOURCEDIR $DESTDIR_BASE/confluence
+    artifacts:
+      paths:
+        - $DESTDIR
+    only:
+      # run stage only for staging branch
+      # add more branches here
+      - staging
+
